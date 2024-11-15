@@ -1,9 +1,49 @@
-<h1> Mes listes </h1>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://scontent-cdg4-3.xx.fbcdn.net/v/t39.30808-6/360086554_783088443817830_9030077989523933595_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=KpchlCCvHj0Q7kNvgHX-4Qq&_nc_zt=23&_nc_ht=scontent-cdg4-3.xx&_nc_gid=AbBROHhRHLZLNYbJp3Ir_SU&oh=00_AYBnvkAmPw2-dAVtQQcb1r2CYbLitAg1T_63fbnADwOMJA&oe=673C4250"/>
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<ul>
-  <% @lists.each do |list| %>
-  <li><%= link_to list.name, list_path(list) %>
-  <% end %>
-</ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <%= link_to "Listes", lists_path %> |
+          </li>
+          <li class="nav-item">
+            | <%= link_to "Nouvelle Liste", new_list_path %>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
-<%= link_to "Créer une liste", new_list_path %>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.f1g.fr/media/figaro/1194x804/2017/06/28/XVMc3565af0-5bd8-11e7-9bb8-f4ad8e4a4fd1.jpg);">
+  <div class="container pt-5 pb-5">
+    <h6>pop corn sucré</h6>
+  </div>
+</div>
+
+
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="mb-0">Mes Listes</h3>
+    <%= link_to "Créer une liste de films", new_list_path, class: "btn btn-primary" %>
+  </div>
+
+<div class="row">
+        <% @lists.each do |list| %>
+          <div class="col-12 col-sm-6 col-md-4 mb-3">
+            <%= link_to list_path(list), class:"text-decoration-none" do %>
+              <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)) url= https://www.critique-film.fr/wp-content/uploads/2020/04/films-affiches.jpg">
+                <%= list.name %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+
+</div>

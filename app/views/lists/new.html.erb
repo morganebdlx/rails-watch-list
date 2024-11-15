@@ -1,6 +1,7 @@
-<h1>Add a new List</h1>
-
-<%= simple_form_for @list do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container bg-white rounded py-5">
+        <h3>Ajouter une nouvelle liste</h3>
+        <%= simple_form_for @list do |f| %>
+          <%= f.input :name, placeholder: 'Drama' %>
+          <%= f.submit class: 'btn btn-primary' %>
+        <% end %>
+</div>

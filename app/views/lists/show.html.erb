@@ -1,3 +1,20 @@
-<h1><%= @list.name %></h1>
+<div class="container">
 
-<%= link_to "Mes listes", lists_path %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <h1><%= @list.name %></h1>
+</div>
+<ul>
+  <%  @list.movies.each  do |movie|%>
+  <li> <%= movie.title %></li>
+  <li> <%= movie.overview %></li>
+  <li> <%= movie.rating %></li>
+  <li> <%= movie.poster_url %></li>
+  <li><%= link_to "Supprimer un film", bookmark_path(movie.bookmark_ids), data: {turbo_method: :delete, turbo_confirm: "Etes vous sûr ?"} %></li>
+
+ <% end %>
+ </ul>
+
+
+<%= link_to "Revenir à mes listes", lists_path %>
+
+</div>
