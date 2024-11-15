@@ -2,6 +2,7 @@
         <h3>Ajouter une nouvelle liste</h3>
         <%= simple_form_for @list do |f| %>
           <%= f.input :name, placeholder: 'Drama' %>
+          <%= f.input :photo, as: :file %>
           <%= f.submit class: 'btn btn-primary' %>
         <% end %>
 </div>
