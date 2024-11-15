@@ -10,13 +10,13 @@
 require "json"
 require "open-uri"
 
-puts 'Creating restaurants...'
+puts 'Creating movies...'
 
 url = 'https://tmdb.lewagon.com/movie/top_rated'
 movie_serialized = URI.parse(url).read
 movie = JSON.parse(movie_serialized)
 
-puts 'Creating restaurants...'
+puts 'Creating movies...'
 
 movie['results'].each do |movie|
   Movie.create(

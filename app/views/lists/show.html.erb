@@ -6,20 +6,16 @@
 
 
 
-<div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" width="100px"/>
-  <ul>
+    <ul>
   <%  @list.movies.each  do |movie|%>
-  <div class="card-product-infos">
   <li> <%= movie.title %></li>
   <li> <%= movie.overview %></li>
   <li> <%= movie.rating %></li>
   <li> <%= movie.poster_url %></li>
   <li><%= link_to "Supprimer un film", bookmark_path(movie.bookmark_ids), data: {turbo_method: :delete, turbo_confirm: "Etes vous sûr ?"} %></li>
-  </div>
-  <% end %>
+<% end %>
  </ul>
-</div>
+
 
 
 
