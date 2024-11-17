@@ -4,17 +4,25 @@
   <h1><%= @list.name %></h1>
 </div>
 
+<%  @list.movies.each  do |movie|%>
+<div class="card-product mt-3 my-3">
+  <img src="<%= movie.poster_url %>"  class="card-img-left" alt="movie poster"/>
+  <div class="card-product-infos">
+
+  <h4><%= movie.title %></h4>
+  <p> <%= movie.overview %></p>
+  <p> <%= movie.rating %></p>
+
+  <br>
+  <%= link_to "Supprimer un film", bookmark_path(movie.bookmark_ids), class: "btn btn-primary" , data: {turbo_method: :delete, turbo_confirm: "Etes vous sûr ?"} %>
+ </div>
+
+</div>
+ <% end %>
 
 
-  <ul>
-  <%  @list.movies.each  do |movie|%>
-  <li> <%= movie.title %></li>
-  <li> <%= movie.overview %></li>
-  <li> <%= movie.rating %></li>
-  <li> <%= movie.poster_url %></li>
-  <li><%= link_to "Supprimer un film", bookmark_path(movie.bookmark_ids), data: {turbo_method: :delete, turbo_confirm: "Etes vous sûr ?"} %></li>
-<% end %>
- </ul>
+
+
 
 
 
